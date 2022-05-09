@@ -23,9 +23,9 @@ public class ArticleController {
 
     //http://localhost:7777/api/article/articleList?pageNum=1&pageSize=5&categoryId=1
     @GetMapping("/articleList")
-    public ResponseResult findAllArticles(@RequestParam("pageNum") Integer pageNum,
-                                          @RequestParam("pageSize") Integer pageSize,
-                                          @RequestParam("categoryId") Long categoryId) {
+    public ResponseResult findAllArticles(@RequestParam(value = "pageNum",required = false,defaultValue = "1") Integer pageNum,
+                                          @RequestParam(value = "pageSize",required = false,defaultValue = "10") Integer pageSize,
+                                          @RequestParam(value = "categoryId",required = false,defaultValue = "0") Long categoryId) {
 
         return articleService.findAllArticles(pageNum,pageSize,categoryId);
     }
