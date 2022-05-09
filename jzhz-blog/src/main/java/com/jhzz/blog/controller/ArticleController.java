@@ -1,15 +1,10 @@
 package com.jhzz.blog.controller;
 
-import com.jhzz.common.entity.Article;
-import com.jhzz.common.entity.params.CommonResult;
+import com.jhzz.common.domain.ResponseResult;
 import com.jhzz.common.service.ArticleService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -21,13 +16,25 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/article")
+@CrossOrigin
 public class ArticleController {
     @Resource
     private ArticleService articleService;
 
-    @RequestMapping("/findAll")
-    public CommonResult findAllArticles(){
-        List<Article> list = articleService.list();
-        return CommonResult.success(list);
+    //http://localhost:7777/api/article/articleList?pageNum=1&pageSize=5&categoryId=1
+    @GetMapping("/articleList")
+    public ResponseResult findAllArticles(@RequestParam("pageNum") Integer pageNum,
+                                          @RequestParam("pageSize") Integer pageSize,
+                                          @RequestParam("categoryId") Long categoryId) {
+
+        return articleService.findAllArticles(pageNum,pageSize,categoryId);
     }
+
+    //hotArticleList
+    @GetMapping("/hotArticleList")
+    public ResponseResult hotArticleList() {
+        return articleService.hotArticleList();
+    }
+
+
 }
