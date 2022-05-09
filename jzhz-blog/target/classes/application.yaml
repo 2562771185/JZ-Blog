@@ -1,9 +1,27 @@
 server:
   port: 7777
+  servlet:
+    context-path: /api
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    username: root
-    password: 123456mjz...
-    url: jdbc:mysql://localhost:3306/blog
+    username: jzblog
+    password: yGHjbeDCihBfsb7C
+    url: jdbc:mysql://121.43.101.99:3306/jzblog
+
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 5MB
+mybatis-plus:
+  configuration:
+    # 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+  global-config:
+    db-config:
+      logic-delete-field: delFlag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto

@@ -1,12 +1,14 @@
 server:
   port: 7777
+  servlet:
+    context-path: /api
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    username: root
-    password: 123456mjz...
-    url: jdbc:mysql://localhost:3306/blog
+    username: jzblog
+    password: yGHjbeDCihBfsb7C
+    url: jdbc:mysql://121.43.101.99:3306/jzblog
 
   servlet:
     multipart:
