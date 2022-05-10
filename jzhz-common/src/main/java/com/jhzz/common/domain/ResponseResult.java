@@ -1,7 +1,7 @@
 package com.jhzz.common.domain;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.jhzz.common.domain.entity.enums.AppHttpCodeEnum;
+import com.jhzz.common.domain.enums.AppHttpCodeEnum;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package com.jhzz.common.domain.entity.enums;
+package com.jhzz.common.domain.enums;
 
 /**
  * \* Created with IntelliJ IDEA.

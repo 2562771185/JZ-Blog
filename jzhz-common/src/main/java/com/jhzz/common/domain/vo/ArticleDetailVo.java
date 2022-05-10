@@ -8,23 +8,21 @@ import java.util.Date;
 /**
  * \* Created with IntelliJ IDEA.
  * \* @author: Huanzhi
- * \* Date: 2022/5/9
- * \* Time: 23:56
+ * \* Date: 2022/5/10
+ * \* Time: 15:23
  * \* Description:
  * \
  */
 @Data
-public class ArticleListVo {
+public class ArticleDetailVo {
     private Long id;
     private String title;
-    private String summary;
-    private String categoryName;
+    private String content;
     private Long categoryId;
-    private String thumbnail;
+    private String categoryName;
     private Long viewCount;
 //    @JsonFormat(locale = "zh", timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
-    private String isTop;
-    private String authorName;
+//    private String authorName;
 
 }
