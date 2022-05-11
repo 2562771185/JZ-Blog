@@ -21,8 +21,8 @@ public class ArticleDetailVo {
     private Long categoryId;
     private String categoryName;
     private Long viewCount;
-//    @JsonFormat(locale = "zh", timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+
     private Date createTime;
-//    private String authorName;
+    private String authorName;
 
 }

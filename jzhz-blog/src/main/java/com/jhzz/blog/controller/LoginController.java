@@ -4,10 +4,9 @@ import com.jhzz.common.domain.ResponseResult;
 import com.jhzz.common.domain.params.LoginParam;
 import com.jhzz.common.service.LoginService;
 import com.jhzz.common.service.SysUserService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -20,15 +19,19 @@ import javax.annotation.Resource;
  * \
  */
 @RestController
+@CrossOrigin
+@Api(tags = "LoginController")
 public class LoginController {
     @Resource
     private LoginService loginService;
 
-    @RequestMapping("/login")
+    @PostMapping("/login")
+    @ApiOperation("登录")
     public ResponseResult login(@RequestBody LoginParam loginParam) {
             return loginService.login(loginParam);
     }
     @PostMapping("/logout")
+    @ApiOperation("注销")
     public ResponseResult logout(){
         return loginService.logout();
     }

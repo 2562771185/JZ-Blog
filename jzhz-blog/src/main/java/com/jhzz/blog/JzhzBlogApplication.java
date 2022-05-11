@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * \* Created with IntelliJ IDEA.
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.jhzz.common.*","com.jhzz.blog.*"})
 @MapperScan(basePackages = {"com.jhzz.common.mapper","com.jhzz.blog.mapper"})
+@EnableWebMvc
 public class JzhzBlogApplication {
     public static void main(String[] args) {
         SpringApplication.run(JzhzBlogApplication.class, args);

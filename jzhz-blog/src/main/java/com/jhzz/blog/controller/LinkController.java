@@ -7,6 +7,9 @@ import com.jhzz.common.domain.entity.Link;
 import com.jhzz.common.domain.vo.LinkVo;
 import com.jhzz.common.service.LinkService;
 import com.jhzz.common.utils.BeanCopyUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,12 +27,15 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("link")
+@Api(tags = "LinkController")
+@CrossOrigin
 public class LinkController {
     @Resource
     private LinkService linkService;
 
 //    /link/getAllLink
     @GetMapping("getAllLink")
+    @ApiOperation("获取所有友链")
     public ResponseResult getAllLink(){
         //查询所有审核通过的
         LambdaQueryWrapper<Link> queryWrapper = new LambdaQueryWrapper<>();
