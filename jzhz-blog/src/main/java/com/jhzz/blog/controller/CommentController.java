@@ -40,10 +40,9 @@ public class CommentController {
     @GetMapping("linkCommentList")
     @ApiOperation("获取友链对应评论")
     public ResponseResult linkCommentList(@RequestParam(value = "pageNum", required = false, defaultValue = "1") Integer pageNum,
-                                          @RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize,
-                                          @RequestParam(value = "articleId") Long articleId) {
+                                          @RequestParam(value = "pageSize", required = false, defaultValue = "10") Integer pageSize) {
 
-        return commentService.linkCommentList(pageNum, pageSize, articleId);
+        return commentService.linkCommentList(pageNum, pageSize);
     }
 
     @PostMapping("add")
