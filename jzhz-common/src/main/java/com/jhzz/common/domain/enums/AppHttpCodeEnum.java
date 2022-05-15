@@ -18,7 +18,10 @@ public enum AppHttpCodeEnum {
     USERNAME_EXIST(501,"用户名已存在"),
     PHONENUMBER_EXIST(502,"手机号已存在"), EMAIL_EXIST(503, "邮箱已存在"),
     REQUIRE_USERNAME(504, "必需填写用户名"),
-    LOGIN_ERROR(505,"用户名或密码错误"), CONTENT_NOT_NULL(506, "评论内容为空");
+    LOGIN_ERROR(505,"用户名或密码错误"), CONTENT_NOT_NULL(506, "评论内容为空"),
+    FILE_TYPE_ERROR(506,"文件类型错误" ), USERNAME_NOT_NULL(508, "用户名为空"),
+    PASSWORD_NOT_NULL(509,"密码为空" ), EMAIL_NOT_NULL(510, "邮箱为空"),
+    NICKNAME_NOT_NULL(511,"昵称为空" ), NICKNAME_EXIST(512, "昵称已存在");
     int code;
     String msg;
 

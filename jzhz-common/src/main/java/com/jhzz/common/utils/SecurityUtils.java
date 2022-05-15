@@ -15,6 +15,10 @@ public class SecurityUtils
      **/
     public static LoginUser getLoginUser()
     {
+        String principal = (String) getAuthentication().getPrincipal();
+        if ("anonymousUser".equals(principal)){
+            return null;
+        }
         return (LoginUser) getAuthentication().getPrincipal();
     }
 

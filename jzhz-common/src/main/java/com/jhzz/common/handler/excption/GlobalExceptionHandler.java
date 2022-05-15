@@ -26,8 +26,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseResult exceptionHandler(Exception e){
         //打印异常信息
-        log.error("exceptionHandler：出现了异常-------{}",e.getMessage());
+        log.error("exceptionHandler：出现了异常-------{}",e);
         //从异常对象中获取提示信息封装返回
-        return ResponseResult.errorResult(AppHttpCodeEnum.SYSTEM_ERROR.getCode(),e.getMessage());
+        return ResponseResult.errorResult(AppHttpCodeEnum.SYSTEM_ERROR.getCode(),e.toString());
     }
 }

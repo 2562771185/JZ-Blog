@@ -1,5 +1,6 @@
 package com.jhzz.blog.controller;
 
+import com.jhzz.common.annotation.SystemLog;
 import com.jhzz.common.domain.ResponseResult;
 import com.jhzz.common.domain.entity.Article;
 import com.jhzz.common.service.ArticleService;
@@ -38,6 +39,7 @@ public class ArticleController {
     //hotArticleList
     @GetMapping("/hotArticleList")
     @ApiOperation("获取热门文章")
+    @SystemLog(businessName = "获取热门文章")
     public ResponseResult hotArticleList() {
         return articleService.hotArticleList();
     }
@@ -45,6 +47,7 @@ public class ArticleController {
     //http://localhost:7777/api/article/1
     @GetMapping("/{id}")
     @ApiOperation("获取文章详情")
+    @SystemLog(businessName = "根据id获取文章详情")
     public ResponseResult detailArticle(@PathVariable Long id) {
         return articleService.findArticleDetailById(id);
     }

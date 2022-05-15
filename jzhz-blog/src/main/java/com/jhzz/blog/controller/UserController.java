@@ -29,6 +29,11 @@ public class UserController {
     //http://localhost:7777/api/user/userInfoUpdate
     @RequestMapping("userInfoUpdate")
     public ResponseResult userInfoUpdate(@RequestBody SysUser user){
+
         return userService.userInfoUpdate(user);
+    }
+    @RequestMapping("register")
+    public ResponseResult register(@RequestBody SysUser user){
+        return userService.register(user);
     }
 }

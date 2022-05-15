@@ -54,6 +54,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/logout").authenticated()
                 //个人信息接口必须登录后才能访问
                 .antMatchers("/user/userInfo").authenticated()
+//                .antMatchers("/upload").authenticated()
                 // 除上面外的所有请求全部不需要认证即可访问
                 .anyRequest().permitAll();
 
